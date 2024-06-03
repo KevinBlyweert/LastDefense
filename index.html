@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Last Planet Defense</title>
+</head>
+
+<body>
+    <header>
+        <h1>Destroy'em all</h1>
+    </header>
+    <main>
+        <div class="store grid">
+            <button class="addHealth">Increase health</button>
+            <button class="addFire">Increase damages</button>
+            <button class="addDef">Increase defense</button>
+            <button class="addFireSpeed">Increase firespeed</button>
+        </div>
+        <div class="gameInfo grid">
+            <div class="health">
+                <div class="health_title">HP</div>
+                <div class="health_info"></div>
+            </div>
+            <div class="damages">
+                <div class="damages_title">ATT</div>
+                <div class="damages_info"></div>
+            </div>
+            <div class="defense">
+                <div class="defense_title">DEF</div>
+                <div class="defense_info"></div>
+            </div>
+            <div class="fireSpeed">
+                <div class="fireSpeed_title">SPD</div>
+                <div class="fireSpeed_info"></div>
+            </div>
+            <div class="money">
+                <div class="money_title">$$$</div>
+                <div class="money_info"></div>
+            </div>
+            <div class="ennemiesOut">
+                <div class="ennemiesOut_title">Kaboom</div>
+                <div class="ennemiesOut_info"></div>
+            </div>
+        </div>
+        <canvas></canvas>
+    </main>
+    <footer></footer>
+    <script src="js/index.js" type="module"></script>
+</body>
+
+</html>

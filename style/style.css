@@ -1,0 +1,114 @@
+:root {
+    --text-color: #3DD68C;
+    --background: #0E1512;
+    --border: #28684A;
+    --hover-bg: #33B074;
+    --size-xl: clamp(2rem, 3rem + 1.1vw, 6rem);
+    --size-l: clamp(1rem, 1rem + 1.2vw, 1.4rem);
+    --min-item-size: clamp(8rem, 2.91rem + 5.44vw, 15rem);
+    --space: clamp(1.5rem, 1.38rem + 0.58vw, 1.875rem);
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: var(--size-l);
+    color: var(--text-color);
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    margin-top: var(--space);
+    max-width: 40rem;
+}
+
+.grid {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-item-size), 1fr));
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: var(--size-xl);
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px var(--text-color),
+        0 0 82px var(--text-color),
+        0 0 92px var(--text-color),
+        0 0 102px var(--text-color),
+        0 0 151px var(--text-color);
+}
+
+main {
+    margin-top: 2rem;
+
+    .store {
+        max-width: 70rem;
+        gap: .1rem;
+
+        button {
+            color: var(--text-color);
+            border-radius: 5px;
+            border: 3px solid var(--border);
+            background-color: var(--background);
+
+            &:hover {
+                border: 3px solid var(--hover-bg);
+                background-color: var(--hover-bg);
+                color: var(--background);
+            }
+
+            &.blink {
+                animation-name: blinker;
+                animation-duration: 0.15s;
+                animation-iteration-count: 5;
+                animation-timing-function: ease-in-out;
+                -webkit-animation-name: blinker;
+                -webkit-animation-duration: 0.15s;
+                -webkit-animation-iteration-count: 5;
+                -webkit-animation-timing-function: ease-in-out;
+            }
+
+            &.disabled {
+                cursor: not-allowed;
+                opacity: .5;
+            }
+        }
+    }
+
+    .gameInfo {
+        max-width: 80rem;
+        margin-top: var(--space);
+
+        >div {
+            border: 2px solid var(--border);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            div:nth-child(even) {
+                text-align: center;
+            }
+        }
+    }
+
+}
+
+@keyframes blinker {
+    0% {
+        border: 3px solid var(--border);
+        background-color: var(--background);
+        color: var(--text-color);
+    }
+
+    100% {
+        border: 3px solid var(--hover-bg);
+        background-color: var(--hover-bg);
+        color: var(--background);
+    }
+}
