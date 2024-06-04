@@ -15,7 +15,13 @@ export default class Bullet extends Ball {
         ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
         ctx.stroke();
     }
-    update(ctx) {
-
+    update(ctx, ennemy) {
+        let posX = Math.cos(Math.atan2((ennemy.y - this.y),(ennemy.x - this.x)));
+        let posY = Math.sin(Math.atan2((ennemy.y - this.y),(ennemy.x - this.x)));
+        this.x += posX * this.velX;
+        this.y += posY * this.velY;
+        // this.x += ennemy.x > this.x ? this.velX : -this.velX;
+        // this.y += ennemy.y > this.y ? this.velY : -this.velY;
+        this.draw(ctx);
     }
 }

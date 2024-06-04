@@ -14,6 +14,7 @@ export default class Player extends Ball {
             money: 5,
             ennemiesOut: 0,
         }
+        this.lastShot = undefined;
     }
     draw(ctx) {
         ctx.beginPath();
